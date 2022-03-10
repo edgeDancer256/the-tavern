@@ -52,7 +52,7 @@ export const RailHeader = () => {
 
       <div className="left-rail-header">
         <Icon
-          onClick={() => fb.auth.signOut()}
+          onClick={async () => fb.auth.signOut()}
           className="sign-out"
           name="sign out"
         />
