@@ -11,7 +11,7 @@ export const ChatProvider = ({ children, authUser }) => {
 
   //Creating a chat
   const createChatClick = () => {
-    newChat(chatConfig, { title: '' });
+    newChat(chatConfig, { title: '1' });
   };
 
   //

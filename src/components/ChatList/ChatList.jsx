@@ -41,7 +41,7 @@ export const ChatList = () => {
                   <div className="preview-message">
                     {c.last_message.attachments.length
                       ? `${c.last_message.sender.username} sent an attachment`
-                      : c.last_message.text.slice(0, 50)}
+                      : c.last_message.text.slice(0, 30)}
                   </div>
                 </div>
               </>
@@ -57,7 +57,7 @@ export const ChatList = () => {
                   <div className="preview-message">
                     {c.last_message.attachments.length
                       ? `${c.last_message.sender.username} sent an attachment`
-                      : c.last_message.text.slice(0, 50)}
+                      : c.last_message.text.slice(0, 30)}
                   </div>
                 </div>
               </>
