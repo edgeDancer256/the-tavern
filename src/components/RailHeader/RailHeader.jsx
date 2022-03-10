@@ -4,12 +4,15 @@ import { useResolved } from 'hooks';
 import { useRef, useState } from 'react';
 import { FileUpload } from 'components';
 import { Icon, IconGroup, Image, Loader } from 'semantic-ui-react';
+import { useHistory } from 'react-router-dom';
+import { browserHistory } from 'react-router';
 
 export const RailHeader = () => {
   const { chatConfig } = useChat();
   const configResolved = useResolved(chatConfig);
   const inputRef = useRef(null);
   const [image, setImage] = useState();
+  const history = useHistory();
 
   return (
     <>
@@ -52,7 +55,11 @@ export const RailHeader = () => {
 
       <div className="left-rail-header">
         <Icon
-          onClick={async () => fb.auth().signOut()}
+          onClick={() =>
+            fb.auth
+              .signOut()
+              .then(() => history.replace('login'), history.replace('login'))
+          }
           className="sign-out"
           name="sign out"
         />
